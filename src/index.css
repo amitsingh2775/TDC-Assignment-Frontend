@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-slate-50 text-tdc-800 font-sans;
+  }
+}
+
+@layer components {
+  .tdc-card {
+    @apply bg-white border border-slate-200/80 rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.04)];
+  }
+  .tdc-input {
+    @apply w-full px-3.5 py-2.5 border border-slate-200 rounded-lg text-sm text-tdc-800 placeholder:text-tdc-400
+      focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-300 transition-all duration-150;
+  }
+  .tdc-btn-primary {
+    @apply px-4 py-2.5 bg-slate-900 text-white rounded-lg text-sm font-medium
+      hover:bg-slate-800 active:bg-slate-700 transition-all duration-150 shadow-sm;
+  }
+  .tdc-btn-ghost {
+    @apply px-3 py-2 text-tdc-500 rounded-lg text-sm font-medium
+      hover:bg-slate-100 hover:text-tdc-700 transition-all duration-150;
+  }
+  .tdc-section-label {
+    @apply text-[11px] font-semibold text-tdc-400 uppercase tracking-[0.08em] mb-1;
+  }
+  .tdc-value {
+    @apply text-sm text-tdc-700 font-medium;
+  }
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-slate-200 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-slate-300; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.25s ease-out both; }
